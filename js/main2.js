@@ -1,4 +1,3 @@
-
 let inventory = {
     coffee: [10, 0.75],
     decafCoffee: [10, 0.75],

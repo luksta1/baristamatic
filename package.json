@@ -1,0 +1,19 @@
+{
+  "name": "baristamatic",
+  "version": "1.0.0",
+  "description": "A command line automatic coffee dispensing machine simulator",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "node js/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luksta1/baristamatic.git"
+  },
+  "author": "Luke Pura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luksta1/baristamatic/issues"
+  },
+  "homepage": "https://github.com/luksta1/baristamatic#readme"
+}
