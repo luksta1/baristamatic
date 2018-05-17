@@ -1,4 +1,3 @@
-
 let inventory = {
     coffee: [10, 0.75],
     decafCoffee: [10, 0.75],
@@ -13,67 +12,70 @@ let inventory = {
 
 let menu = {
     coffee: {
-        name: 'Coffee',
         ingredients: {
             coffee: 3,
             sugar: 1,
             cream: 1,
         },
-        price: 2.75,
-        inStock: true
+        price: priceCheck('coffee'),
+        inStock: inStockCheck()
     },
     decafCoffee: {
-        name: 'Decaf Coffee',
         ingredients: {
             decafCoffee: 3,
             sugar: 1,
             cream: 1
         },
-        price: 2.75,
-        inStock: true
+        price: priceCheck('decafCoffee'),
+        inStock: inStockCheck()
     },
     caffeeLate: {
-        name: 'Caffee Late',
         ingredients: {
             espresso: 2,
             steamedMilk: 1
         },
-        price: 2.55,
-        inStock: true
+        price: priceCheck('caffeeLate'),
+        inStock: inStockCheck()
     },
     caffeAmericano: {
-        name: 'Caffe Americano',
         ingredients: {
             espresso: 3
         },
-        price: 3.30,
-        inStock: true
+        price: priceCheck('caffeAmericano'),
+        inStock: inStockCheck()
     },
     caffeMocha: {
-        name: 'Coffee',
         ingredients: {
             espresso: 1,
             cocoa: 1,
             steamedMilk: 1,
             whippedCream: 1
         },
-        price: 2.70,
-        inStock: true
+        price: priceCheck('caffeMocha'),
+        inStock: inStockCheck()
     },
     cappuccino: {
-        name: 'Cappuccino',
         ingredients: {
             espresso: 2,
             steamedMilk: 1,
             foamedMilk: 1
         },
-        price: 2.90,
-        inStock: true
+        price: priceCheck('cappuccino'),
+        inStock: inStockCheck()
     }
 }
 
-const checkStock = () => {
-
+const priceCheck = (drink) => {
+    let total = 0
+    for (let key in menu.drink.ingredients) {
+        total += inventory.key[1] * menu.drink.ingredients.key
+    }
+    return total
 }
 
-console.log(menu)
+const inStockCheck = () => {
+    return true
+}
+
+console.log(menu.coffee.price)
+
