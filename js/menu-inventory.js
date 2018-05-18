@@ -1,7 +1,7 @@
 let inventory = {
     coffee: {
         name: 'Coffee',
-        stock: 3,
+        stock: 2,
         unitPrice: 0.75
     },
     decafCoffee: {
