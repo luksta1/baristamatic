@@ -23,12 +23,17 @@ const inStockCheck = (menu, inv) => {
     }
 }
 
-const invCalculate = () => {
-
+const calculateStock = (beverage, inv, menu) => {
+    for (let ingredient in menu[beverage].ingredients) {
+        if (menu[beverage].ingredients.hasOwnProperty(ingredient)) {
+            inv[ingredient].stock = inv[ingredient].stock - menu[beverage].ingredients[ingredient]
+        }
+    }
+    inStockCheck(menu, inv)
 }
 
 module.exports = {
     restock,
     inStockCheck,
-    invCalculate
+    calculateStock
 }
