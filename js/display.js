@@ -1,10 +1,15 @@
 const mapInventory = (inv) => {
     console.log('Inventory:\n')
-    for (let ingredient in inv) {
-        if (inv.hasOwnProperty(ingredient)) {
+    Object.keys(inv)
+        .sort()
+        .forEach(ingredient => {
             console.log(`${inv[ingredient].name}, ${inv[ingredient].stock}`)
-        }
-    }
+        });
+    // for (let ingredient in inv) {
+    //     if (inv.hasOwnProperty(ingredient)) {
+    //         console.log(`${inv[ingredient].name}, ${inv[ingredient].stock}`)
+    //     }
+    // }
 }
 
 const mapMenu = (menu) => {
