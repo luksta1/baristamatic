@@ -24,7 +24,7 @@ You can clone this repository to your computer by pasting
 . Once that is done, please follow these steps:
 - `npm install --save` (this will install the dependencies)
 - `npm start` (this will run the coffee machine)
-- Order drinks by typing the corresponding number on menu 
-- Type "R" or "r" to restock inventory
-- Type "Q" or "q" to quit the program
+- Order drinks by typing the corresponding number on menu
+- Type `R` or `r` to restock inventory
+- Type `Q` or `q` to quit the program
 
