@@ -8,7 +8,7 @@ const mapInventory = (inv) => {
 }
 
 const mapMenu = (menu) => {
-    console.log('\nMenu:')
+    console.log('Menu:')
     const beverages = Object.keys(menu);
     beverages.sort()
         .forEach(beverage => {

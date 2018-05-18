@@ -1,9 +1,9 @@
 const { menu, inventory } = require('./menu-inventory')
 const { mapInventory, mapMenu } = require('./display');
-const { restock, inStockCheck, calculateStock, runCoffeeMachine } = require('./logic');
+const { restock, inStockCheck, runCoffeeMachine } = require('./logic');
 
 const main = () => {
-    // restock(menu, inventory)
+    restock(menu, inventory)
     inStockCheck(menu, inventory)
     mapInventory(inventory);
     mapMenu(menu)

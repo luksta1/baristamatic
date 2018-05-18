@@ -36,6 +36,26 @@ const calculateStock = (beverage, inv, menu) => {
     inStockCheck(menu, inv)
 }
 
+const runOrder = (input, menu, inv) => {
+    const menuItems = Object.keys(menu).sort();
+    let selection = Number(input);
+
+    if (!isNaN(selection) && selection > 0 && selection <= menuItems.length) {
+        let bevOrdered = menu[menuItems[selection - 1]]
+        if (!bevOrdered.inStock) {
+            console.log(`Out Of Stock: ${bevOrdered.name}`)
+        } else {
+            console.log(`Dispensing: ${bevOrdered.name}`)
+            calculateStock(menuItems[selection - 1], inv, menu);
+            mapInventory(inv);
+            mapMenu(menu)
+        }
+    } else {
+        console.log(`Invalid Selection: ${input}`)
+    }
+
+}
+
 const runCoffeeMachine = (inv, menu) => {
 
     const rl = readline.createInterface({
@@ -43,21 +63,25 @@ const runCoffeeMachine = (inv, menu) => {
         output: process.stdout,
     });
 
-    rl.on('line', (line) => {
-        switch (line.trim()) {
-            case 'r' || 'R':
+    rl.on('line', (input) => {
+        switch (input.trim()) {
+            case 'r':
+            case 'R':
                 console.log('Restocking Machine');
                 restock(menu, inv)
                 mapInventory(inv);
                 mapMenu(menu)
                 break;
+            case 'q':
+            case 'Q':
+                process.exit(0);
+                break;
             default:
-                console.log(`Say what? I might have heard '${line.trim()}'`);
+                runOrder(input, menu, inv)
                 break;
         }
         rl.prompt();
     }).on('close', () => {
-        console.log('Have a great day!');
         process.exit(0);
     });
 }
