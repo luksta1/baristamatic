@@ -14,7 +14,7 @@ const mapMenu = (menu) => {
         .forEach(beverage => {
             if (menu.hasOwnProperty(beverage)) {
                 const index = beverages.indexOf(beverage)
-                console.log(`${index + 1}, ${menu[beverage].name}, $${menu[beverage].price}, ${menu[beverage].inStock}`)
+                console.log(`${index + 1}, ${menu[beverage].name}, $${menu[beverage].price.toFixed(2)}, ${menu[beverage].inStock}`)
             }
         });
 }
