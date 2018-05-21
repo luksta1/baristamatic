@@ -67,8 +67,8 @@ let menu = {
         price: 2.75,
         inStock: true
     },
-    caffeeLate: {
-        name: 'Caffee Late',
+    caffeLate: {
+        name: 'Caffe Late',
         ingredients: {
             espresso: 2,
             steamedMilk: 1
