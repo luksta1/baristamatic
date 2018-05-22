@@ -18,7 +18,8 @@ A user can also restock the machine and quit out of the program completely.
 <br />
 #### Run Instructions
 
-cd into the correct folder: `baristamatic` in a terminal window
+Down load and navigate to the correct folder: `baristamatic` in a terminal window or you can also clone this repository to your computer by pasting 
+`git clone https://github.com/luksta1/baristamatic` in a terminal window
 
 . Once that is done, please follow these steps:
 - `npm install --save` (this will install the dependencies)
