@@ -1,6 +1,7 @@
 const readline = require('readline');
 const { mapInventory, mapMenu } = require('./display');
 
+// function to check stock based on units needed vs inventory and set to true or false
 const inStockCheck = (menu, inv) => {
     for (let beverage in menu) {
         if (menu.hasOwnProperty(beverage)) {
@@ -18,6 +19,7 @@ const inStockCheck = (menu, inv) => {
     }
 }
 
+// function to loop over inventory and reset all ingredients to 10
 const restock = (menu, inv) => {
     for (let ingredient in inv) {
         if (inv.hasOwnProperty(ingredient)) {
@@ -27,6 +29,7 @@ const restock = (menu, inv) => {
     inStockCheck(menu, inv)
 }
 
+// function to check the inventory stock once a drink has been ordered
 const calculateStock = (beverage, inv, menu) => {
     for (let ingredient in menu[beverage].ingredients) {
         if (menu[beverage].ingredients.hasOwnProperty(ingredient)) {
@@ -36,6 +39,7 @@ const calculateStock = (beverage, inv, menu) => {
     inStockCheck(menu, inv)
 }
 
+// function to check if a valid order was placed and to print out the correct drink
 const runOrder = (input, menu, inv) => {
     const menuItems = Object.keys(menu).sort();
     let selection = Number(input);
@@ -56,6 +60,7 @@ const runOrder = (input, menu, inv) => {
 
 }
 
+// main coffee machine function that runs Node.js readline method to create a command line interface and read input cases
 const runCoffeeMachine = (inv, menu) => {
 
     const rl = readline.createInterface({

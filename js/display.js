@@ -1,3 +1,4 @@
+// function to map over the inventory and print it out line by line
 const mapInventory = (inv) => {
     console.log('Inventory:')
     Object.keys(inv)
@@ -7,6 +8,7 @@ const mapInventory = (inv) => {
         });
 }
 
+// function to map over the menu and print it out line by line
 const mapMenu = (menu) => {
     console.log('Menu:')
     const beverages = Object.keys(menu);
